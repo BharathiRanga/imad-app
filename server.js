@@ -15,6 +15,26 @@ var articleOne = {
                <p>This is content for article one. This is a beautiful article and very useful.This is content for article one. This is a beautiful article and very useful.This is content for article one. This is a beautiful article and very useful.</p>`
 };
 
+var articleTwo = {
+    title : "Article two | Bharathi",
+    heading: "Article two",
+    date: 'Sep 7, 2017',
+    content: `<p>This is content for article two. This is a beautiful article and very useful.This is content for article two. This is a beautiful article and very useful.This is content for article two. This is a beautiful article and very useful.</p>
+               <p>This is content for article two. This is a beautiful article and very useful.This is content for article two. This is a beautiful article and very useful.This is content for article two. This is a beautiful article and very useful.</p>
+               <p>This is content for article two. This is a beautiful article and very useful.This is content for article two. This is a beautiful article and very useful.This is content for article two. This is a beautiful article and very useful.</p>
+               <p>This is content for article two. This is a beautiful article and very useful.This is content for article two. This is a beautiful article and very useful.This is content for article two. This is a beautiful article and very useful.</p>`
+};
+
+var articleThree = {
+    title : "Article three | Bharathi",
+    heading: "Article three",
+    date: 'Sep 7, 2017',
+    content: `<p>This is content for article three. This is a beautiful article and very useful.This is content for article three. This is a beautiful article and very useful.This is content for article three. This is a beautiful article and very useful.</p>
+               <p>This is content for article three. This is a beautiful article and very useful.This is content for article three. This is a beautiful article and very useful.This is content for article three. This is a beautiful article and very useful.</p>
+               <p>This is content for article three. This is a beautiful article and very useful.This is content for article three. This is a beautiful article and very useful.This is content for article three. This is a beautiful article and very useful.</p>
+               <p>This is content for article three. This is a beautiful article and very useful.This is content for article three. This is a beautiful article and very useful.This is content for article three. This is a beautiful article and very useful.</p>`
+};
+
 function createTemplate(data){
 var title = data.title;
 var date = data.date;
@@ -62,13 +82,13 @@ app.get('/article-one', function(req, res){
     
 app.get('/article-two', function(req, res){
     
-res.sendFile(path.join(__dirname, 'ui', 'article-two.html'));
+ res.send(createTemplate(articleTwo));
 });
     
     
 app.get('/article-three', function(req, res){
     
-res.sendFile(path.join(__dirname, 'ui', 'article-three.html'));
+res.send(createTemplate(articleThree));
 });
     
 
