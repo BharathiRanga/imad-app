@@ -37,6 +37,7 @@ button.onclick = function(){
      
      
      // Capture a list of names and render it as a list
+     alert("Button has been clicked");
      var names = ["name1","name2","name3"];
      var list = "";
      for (var i=0; i < names.length; i++){
