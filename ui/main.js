@@ -20,13 +20,14 @@ button.onclick = function(){
             }
         };
 
- 
  // Make a request 
  request.open("GET","http://bharathiranga.imad.hasura-app.io/counter", true);
  request.send(null);
     
     
 };
+  
+
  
  // capture the values from the text box and submit button
  
@@ -37,17 +38,32 @@ button.onclick = function(){
  // On clicking of submit value in text box should be added in the list
  
  submit.onclick = function(){
-     //Make a request to the server to send the name
+     //Create a request object
+     var request = new XMLHttpRequest();
      
+      // Make a request 
+    request.open("GET","http://bharathiranga.imad.hasura-app.io/submit-name?name="+ name1 , true);
+    request.send(null);
+ 
+     //Capture response and store it in a variable and render it as a list
      
-     // Capture a list of names and render it as a list
+     request.onreadystatechange = function(){
+         if (request.readyState === XMLHttpRequest.DONE){
+             
+            if (request.status === 200){
+             
+             var names = request.responseText;
+             names = JSON.parse(names);
+             var list = "";
+              for (var i=0; i < names.length; i++) {
+                 list = list + "<li>"+ names[i] + "</li>";
+             }
+             var ul = document.getElementById("nameList");
+             ul.innerHTML = list;
+                         }   
+            }
+        };
   
-     var names = ["name1","name2","name3","name4"];
-     var list = "";
-     for (var i=0; i < names.length; i++) {
-         list = list + "<li>"+ names[i] + "</li>";
-     }
-     var ul = document.getElementById("nameList");
-     ul.innerHTML = list;
- };
+ 
     
+ };  
