@@ -18,11 +18,15 @@ button.onclick = function(){
              span.innerHTML = counter.toString();
                  }   
             }
- };
+        };
+
  
  // Make a request 
  request.open("GET","http://bharathiranga.imad.hasura-app.io/counter", true);
  request.send(null);
+    
+    
+};
  
  // capture the values from the text box and submit button
  
