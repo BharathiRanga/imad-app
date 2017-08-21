@@ -27,7 +27,7 @@ button.onclick = function(){
  // capture the values from the text box and submit button
  
  var nameTxt = getElementById("name");
- var name = textValue.value;
+ var name = nameTxt.value;
  var submit = getElementById("submit_btn");
  
  // On clicking of submit value in text box should be added in the list
