@@ -9,9 +9,9 @@ button.onclick = function(){
  
  request.onreadystatechange = function(){
      if (request.readyState === XMLHttpRequest.DONE){
-         alert("Page has loaded")
+         alert("Page has loaded");
         if (request.status === 200){
-            alert ("request is successful")
+            alert ("request is successful");
          var counter = request.responseText;
          var span = document.getElementById("count");
          span.innerHTML = counter.toString();
