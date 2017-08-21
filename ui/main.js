@@ -30,9 +30,9 @@ button.onclick = function(){
  
  // capture the values from the text box and submit button
  
- var nameTxt = getElementById("name");
+ var nameTxt = document.getElementById("name");
  var name1 = nameTxt.value;
- var submit = getElementById("submit_btn");
+ var submit = document.getElementById("submit_btn");
  
  // On clicking of submit value in text box should be added in the list
  
