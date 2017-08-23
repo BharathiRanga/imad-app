@@ -119,12 +119,12 @@ app.get('/submit-name', function (req, res) { // submit-name?name=xxx
 
 app.get('/articles/:articleName', function(req, res){
 
-    pool.query("select * from article where title = " + req.params.articleName, function(err,result){
+    pool.query("select * from articles where title = " + req.params.articleName, function(err,result){
         if (err){
             res.status(500).send(err.toString());
         }
         else{
-            if (result.rows.length ===0){
+            if (result.rows.length === 0){
                 res.status(404).send('Article not found');
             } 
             else{
